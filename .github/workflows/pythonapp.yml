@@ -1,5 +1,7 @@
 name: MLOPs Python Cookbook with Github Actions
+
 on: [push]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,13 +33,13 @@ jobs:
       with:
         registry: ghcr.io
         username: ${{ github.repository_owner }}
-        password: ${{ secrets.BUILDCONTAINERS }}
+        password: ${{ secrets.GH_REGISTRY}}
     - name: build flask app
       uses: docker/build-push-action@v2
       with:
         context: ./
         #tags: alfredodeza/flask-roberta:latest
-        tags: ghcr.io/noahgift/python-mlops-cookbook:latest
+        tags: ghcr.io/amaanrzv39/python-mlops-cookbook:latest
         push: true
     
     

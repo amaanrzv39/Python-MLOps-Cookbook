@@ -4,8 +4,7 @@ from mlib import predict
 
 # var=
 
-
-@click.command()
+@click.command("predict")
 @click.option(
     "--weight",
     prompt="MLB Player Weight",
